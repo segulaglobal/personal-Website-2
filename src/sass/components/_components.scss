@@ -1,0 +1,109 @@
+
+
+
+
+  
+//////////////////////
+//   TO-TOP BUTTON
+/////////////////////
+.to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 8;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 40%;
+    background: var(--clr-primary);
+    opacity: .8;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.173);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // border: 2px solid var(--clr-gray-light);
+    color: var(--clr-black);
+    @include ease(.2s);
+    opacity: 0;
+    pointer-events: none;
+
+    &:hover {
+        background-color: var(--clr-white);
+        transform: translateY(-3px);
+    }
+
+    &:hover i, &:focus i {
+        color: var(--clr-primary);
+    }
+
+    i {
+        color: var(--clr-gray-light);
+        font-size: 2.5rem;
+        padding-bottom: 3px;
+    }
+}
+
+
+
+
+
+
+
+
+//////////////////////
+//   BUTTONS
+/////////////////////
+.btn {
+    display: inline-block;
+    outline: none;
+    border: none;
+    padding: 1.5rem 6rem;
+    font-family: inherit;
+    font-size: 1.3rem;
+    border: 2px solid transparent;
+    @include ease(.3s);
+    overflow: hidden;
+    z-index: 1;
+    // border-radius: .5rem;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.542);
+    cursor: pointer;
+    border-radius: 3rem;
+
+    &:hover, &:focus {
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.242);
+        transform: translateY(-3px);
+    }
+
+}
+.btn-primary {
+    background-color: var(--clr-primary);
+    color: var(--clr-black);
+    border: 2px solid var(--clr-primary);
+
+    &:hover, &:focus {
+      color: var(--clr-primary);
+      border: 2px solid var(--clr-primary);
+      background-color: transparent;
+    }
+}
+.btn-neutral {
+    background-color: transparent;
+    color: var(--clr-white);
+    border: 2px solid var(--clr-white);
+
+    &:hover, &:focus {
+      background-color: var(--clr-white);
+      color: Var(--clr-black);
+    }
+}
+.btn-thin {
+    padding: 2rem 3rem;
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--clr-primary);
+
+    &:hover, &:focus {
+      color: darkred;
+    }
+}
+

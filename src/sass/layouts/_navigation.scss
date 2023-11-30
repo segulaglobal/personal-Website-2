@@ -1,0 +1,286 @@
+.nav-scrolled {
+    box-shadow: 0 .2rem .3rem rgba(0, 0, 0, 0.349);
+}
+
+.nav-bar {
+    width: 100%;
+    height: 95px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: var(--clr-black);
+
+    .nav-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    // =========  Nav-Button   =============
+    .nav-btn {
+        cursor: pointer;
+        @include ease(.4s);
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(0px, -50%) scaleX(-1);
+        ;
+        text-align: center;
+
+        &:hover .lines {
+            background-color: var(--clr-gray);
+        }
+
+        .lines {
+            // width: 3rem;
+            height: .3rem;
+            background-color: var(--clr-primary);
+            @include ease(.5s);
+            text-align: right;
+
+            &:nth-child(1) {
+                width: 3.5rem;
+            }
+            &:nth-child(2) {
+                width: 2.5rem;
+            }
+            &:nth-child(3) {
+                width: 1rem;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: .6rem;
+            }
+
+        }
+        &.close {
+            transform: translate(0px, -50%) rotate(180deg);
+
+            .lines {
+
+                // &:nth-child(1) {
+                //     transform: translate(0px, 9px) rotate(45deg);
+                // }
+                // &:nth-child(2) {
+                //     opacity: 0;                
+                // }
+                // &:nth-child(3) {
+                //     transform: translate(0px, -9px) rotate(-45deg);
+                // }
+            }
+        }
+    }
+
+    // =========  LOGO   =============
+    .logo {
+        margin-bottom: 0;
+
+        img {
+            width: 150px;
+            height: auto;
+        }
+    }
+
+    // Navigation Menu
+    .nav-list {
+        list-style: none;
+
+        .nav-item {
+            display: inline-block;
+
+            &:not(:last-child) {
+                margin-right: 4rem;
+            }
+
+            .nav-link {
+                color: var(--clr-white);
+                display: inline-block;
+                padding: 1rem;
+                font-family: inherit;
+                @include ease(.3s);
+                position: relative;
+                z-index: 1;
+
+
+                &:hover::after,
+                &:focus::after {
+                    left: 50%;
+                    opacity: 1;
+                }
+                
+
+                &:hover, &:focus {
+                    @include skewUp;
+                    color: var(--clr-primary);
+                }
+            }
+        }
+        
+    }
+
+    // navigation email
+    .nav-email {
+        color: var(--clr-gray);
+        display: inline-block;
+        
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////
+//               Media Querries 
+//////////////////////////////////////////////////
+@media screen and (max-width: 1019px) {
+    .nav-bar {
+
+        .nav-list {
+            width: 260px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background-image: linear-gradient(to right, #FCD405, #EE3A5B);
+            backdrop-filter: blur(.1rem);
+            display: flex;
+            flex-direction: column;
+            padding-top: min(20vh, 4rem);
+            justify-content: center;
+            text-align: center;
+            @include ease(.4s);
+            transform: translate3d(-100%, 0, 0);
+
+            .nav-item {
+                opacity: 0;
+                @include ease(.4s);
+
+                &:not(:last-child) {
+                    margin-right: 0;
+                    // display: none;
+                }
+
+                &.show {
+                    opacity: 1;
+
+                    &:nth-child(1) {
+                        transition-delay: .4s;
+                    }
+                    &:nth-child(2) {
+                        transition-delay: .6s;
+                    }
+                    &:nth-child(3) {
+                        transition-delay: .8s;
+                    }
+                    &:nth-child(4) {
+                        transition-delay: 1s;
+                    }
+                    &:nth-child(5) {
+                        transition-delay: 1.2s;
+                    }
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 2rem;
+                }
+
+                .nav-link {
+                    color: var(--clr-black);
+
+                    &::after {
+                        background: var(--clr-white);
+                    }
+                    &.btn {
+                        padding-inline: 2rem;
+                        margin-top: 2rem;
+                    }
+                }
+            }
+
+            &.show {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        // nav-email
+        .nav-email {
+            position: fixed;
+            bottom: 5rem;
+            left: 5rem;
+            opacity: 0;
+            pointer-events: none;
+
+            &.show {
+                opacity: 1;
+                pointer-events: initial;
+                transition: opacity .4s .6s;
+            }
+        }
+
+    }
+
+    .nav-overlay {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+        background-color: rgba(60, 60, 60, 0.712);
+        @include ease(.2s);
+        opacity: 0;
+        pointer-events: none;
+
+        &.show {
+            opacity: 1;
+            pointer-events: initial;
+        }
+    }
+}
+
+@media screen and (min-width: 1020px) {
+
+    .nav-bar {
+
+        .nav-list {
+            display: flex;
+
+            .nav-item {
+                
+                &:not(:last-child) {
+                    margin-right: 2rem;                
+                }
+
+                .nav-link {
+
+                    &.btn-neutral {
+                        color: var(--clr-primary);
+                    }
+
+                    &:hover,
+                    &:focus {
+                        color: var(--clr-primary);
+                    }
+                }
+            }
+
+        }
+    
+        .nav-btn {
+            display: none;
+        }
+
+    }
+}

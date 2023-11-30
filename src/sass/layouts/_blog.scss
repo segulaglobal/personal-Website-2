@@ -1,0 +1,248 @@
+.section-blog__post {
+    margin-bottom: 10rem;
+}
+
+
+
+.blog-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 10rem;
+}
+
+.article {
+    width: 100%;
+    text-align: center;
+    @include ease(.4s);
+    border-radius: 7px;
+    background-color: var(--clr-gray-light);
+    overflow: hidden;
+    padding-bottom: 10px;
+    box-shadow: 0 .2rem .2rem rgba(0, 0, 0, 0.075);
+
+    .snippet {
+
+        &__title {
+            color: var(--clr-gray-dark-2);
+            font-size: 2.5rem;
+            text-transform: capitalize;
+            line-height: 1.5;
+
+            a {
+                color: inherit;
+
+                &:hover, &:focus {
+                    color: var(--clr-primary);
+                }
+            }
+        }
+        &__meta {
+            color: var(--clr-gray-dark-1);
+            font-size: 1.2rem;
+            margin: .5rem 0;
+        }
+        &__body {
+            margin: 0 1rem 1rem;
+        }
+        &__image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        &__date {
+            font-weight: lighter;
+            color: darkgray;
+            font-size: 1.5rem;
+            margin: 1rem 2rem;
+        }
+        &__description {
+            margin: 1rem;
+            line-height: 1;
+        }
+        &__text {
+            margin: 0 1rem 4rem;
+        }
+        .btn {
+            margin-bottom: 1rem;
+            padding: 1rem 2.5rem;
+        }
+    }
+
+}
+
+@media screen and (min-width: 1023px) {
+
+    .blog-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// @media screen and (min-width: 1020px) {
+
+//     .articles__list {
+//         .snippet {
+//           grid-template-areas:
+//             "snippet-title snippet-image"
+//             "snippet-meta snippet-image"
+//             "snippet-body snippet-image"
+//             "snippet-button snippet-image";
+//           grid-column-gap: 4em;
+//           grid-template-columns: 1fr 40%;
+//           grid-template-rows: min-content min-content min-content 1fr;
+
+//           &__title {
+//               margin-left: 4rem;
+//               margin-top: 4rem;
+//           }
+//           &__body {
+//               margin-left: 4rem;
+//           }
+//           &__meta {
+//               margin-left: 4rem;
+//           }
+
+//           .btn {
+//               margin-left: 4rem;
+//               align-self: end;
+//           }
+//         }
+//     }
+//   }
+// @media screen and (max-width: 1019px) {
+//     .articles__list {
+//         .snippet {
+//             text-align: center;
+
+//             .btn {
+//                 justify-self: center;
+
+//             }
+//         }
+//     }
+// }
+
+
+// table of content
+// 1. Logo animation
+// 2. Welcome Video
+// 3. Article Snippet
+// 4. Individual Block Page
+
+
+
+// ========= LOGO ANIMATION ================
+
+
+
+
+
+
+
+
+
+// ============= INDIVIDUAL BLOG PAGE ====================
+.individual-article__page {
+    // padding-bottom: 12rem;
+
+    .flow {
+        max-width: 1000px;
+        padding-inline: 2rem;
+        margin-inline: auto;
+    }
+
+    .main-article__figure {
+        margin-bottom: 1rem;
+        position: relative;
+        padding: 0;
+        height: 300px;
+
+        img {
+            width: 200px;
+            height: auto;
+            aspect-ratio: 1 / 1.5;
+            object-fit: cover;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+
+        &::before, &::after {
+            content: "";
+            display: inline-block;
+            height: .1rem;
+            width:25%;
+            background-color: var(--clr-black);
+            position: absolute;
+            top: 50%;
+        }
+        &::before {
+            left: 0;
+        }
+        &::after {
+            right: 0;
+        }
+    }
+    
+    .description {
+        font-weight: 400;
+        margin-bottom: 2rem;
+    }
+    .author {
+        text-transform: capitalize;
+        color: darkgray;
+    }
+
+    hr {
+        margin: 4rem 0;
+    }
+
+
+
+    h1 {
+        margin-bottom: .5rem;
+        margin-top: 3rem;
+        // font-family: 'Yellowtail', cursive;
+        letter-spacing: 2px;
+    }
+    .heading-secondary {
+        font-family: 'Oswald', sans-serif;
+        letter-spacing: 0px;
+    }
+    
+    p {
+        margin-bottom: 1rem;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+   .individual-article__page {
+       
+
+       .main-article__figure {
+
+        &::before, &::after {
+            display: none;
+        }
+       }
+   }
+
+  }
+@media screen and (max-width: 1019px) {
+  
+}

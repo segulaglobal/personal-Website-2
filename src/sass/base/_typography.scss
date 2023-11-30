@@ -1,0 +1,82 @@
+// Table of Content
+// 1. heading primary
+// 2. heading Secondary
+// 3. thin text
+// 4. white text
+
+
+// heading-primary
+.heading-primary {
+    font-family: "openSans", sans-serif;
+    font-weight: bold;
+    font-size: 5rem;
+    position: relative;
+    text-transform: capitalize;
+    color: var(--clr-black);    
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+}
+
+
+// heading Secondary
+.heading-secondary {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--clr-primary);
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+
+}
+
+// thin & light text
+.thin-text {
+    font-weight: lighter;
+    letter-spacing: 2px;
+}
+// white text
+.white-text {
+    color: #fff;
+
+    &::before, &::after {
+        background-color: var(--clr-gold-light);
+    }
+}
+.primary-text {
+    color: var(--clr-primary);
+}
+
+
+// Align
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 766px) {
+
+  .heading-secondary {
+      font-size: 25px;
+      font-weight: bolder;
+  }
+  .heading-primary {
+    font-size: 4rem;
+  }
+}

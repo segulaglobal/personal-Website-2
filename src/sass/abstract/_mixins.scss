@@ -1,0 +1,56 @@
+@mixin ease($speed) {
+    transition-duration: $speed;
+    transition-timing-function: ease-in-out;
+}
+@mixin skewUp {
+    transform: scale(1.1) skew(5deg, -4deg);
+}
+
+@mixin shadow  {
+    box-shadow: 0 4px 5px rgba(5, 0, 41, 0.174);
+
+    &:hover, &:focus {
+        box-shadow: 0 1px 3px rgba(5, 0, 41, 0.44);
+        transform: translateY(-2px);
+    }
+}
+@mixin clr-shadow ($color) {
+    box-shadow: 0 4px 10px rgba($color, .3);
+}
+
+
+
+
+.text-center {
+    text-align: center;
+}
+
+// margin-bottom
+.mb-20 {
+    margin-bottom: 2rem;
+}
+.mb-50 {
+    margin-bottom: 5rem;
+}
+.mb-100 {
+    margin-bottom: 10rem;
+}
+
+
+
+
+// margin-right
+.mr-20 {
+    margin-right: 2rem;
+}
+.mr-50 {
+    margin-right: 5rem;
+}
+
+// margin-top
+.mt-20 {
+    margin-top: 2rem;
+}
+.mt-50 {
+    margin-top: 5rem;
+}

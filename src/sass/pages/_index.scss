@@ -1,0 +1,509 @@
+// Table of Content
+// 1. Coming soon page
+// 2. Section-hero
+// 3. About us section
+// 4. Section Services
+// 5. Section Banner
+// 6. Section Proposition
+// 7. Section Testimonials
+// 8. Section packages.
+
+
+
+
+
+
+
+
+// ================= Section-hero =========================
+.section-hero {
+    width: 100%;
+    min-height: 100vh;
+    @include ease(.4s);
+    position: relative;
+    padding-top: 180px;
+    background-color: var(--clr-black);
+    color: var(--clr-white);
+
+
+    &#hero {
+        // padding-top: 0;
+    }
+
+    .hero-image {
+        position: relative;
+        z-index: 2;
+        margin-top: 10px;
+        
+    }
+
+    
+    .hero-text {
+        
+        h1 {
+            font-size: 5rem;
+            line-height: 1.5;
+            margin-bottom: 3rem;
+        }
+        p {
+            font-size: 1.8rem;
+        }
+    }
+
+    .btn {
+        opacity: 0;
+        animation: fadeIn .4s ease-in-out 1s forwards;
+    }
+    
+}
+// End of Section Hero
+
+
+
+// ================= Section-awards =========================
+.section-awards {
+    background-color: var(--clr-gray-light);
+    
+    .col-3 {
+        max-width: 70%;
+        margin: 0 auto;
+        gap: 4rem;
+    }
+}
+// End of section-awards
+
+
+
+
+
+
+// ====================== Section services ===================
+.section-services {
+    padding: 10rem 0 15rem;
+
+    .col-3 {
+        gap: 0;
+    }
+
+    .service {
+        padding: 3rem;
+        // box-shadow: 0 .2rem .5rem rgba(64, 48, 102, 0.186);
+        // border-radius: 1rem;
+        transition: .4s;
+        background-color: var(--clr-gray-light);
+
+        // &:nth-child(1) {
+        //     border-radius: 1rem 0 0 1rem;
+        // }
+        // &:nth-child(3) {
+        //     border-radius: 0rem 1rem 1rem 0rem;
+        // }
+        // &:not(:last-child) {
+        //     border-right: 1px solid var(--clr-primary);
+        // }
+
+        &:hover {
+            transform: scale(1.03);
+        }
+        &:hover .service__icon .red {
+            color: rgba(248, 161, 161, 0.495);
+            background-color: red;
+        }
+        &:hover .service__icon .yellow {
+            color: rgba(248, 241, 161, 0.637);
+            background-color: rgb(173, 159, 0);
+        }
+        &:hover .service__icon .blue {
+            color: rgba(161, 190, 248, 0.637);
+            background-color: rgb(20, 0, 122);
+        }
+        &:hover .service__icon .green {
+            color: rgba(161, 248, 221, 0.637);
+            background-color: rgb(11, 108, 1);
+        }
+
+        &__icon i {
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            font-size: 1.7rem;
+            transition: .4s;
+        }
+        &__icon .red {
+            background-color: rgba(248, 161, 161, 0.495);
+            color: red;
+
+        }
+        &__icon .yellow {
+            background-color: rgba(248, 241, 161, 0.637);
+            color: rgb(173, 159, 0);
+        }
+        &__icon .blue {
+            background-color: rgba(161, 190, 248, 0.637);
+            color: rgb(20, 0, 122);
+        }
+        &__icon .green {
+            background-color: rgba(161, 248, 221, 0.637);
+            color: rgb(11, 108, 1);
+        }
+
+        h3 {
+            padding-block: 1rem;
+        }
+    }
+
+}
+// End of Section Services
+
+
+
+// ====================== Section Banner ===================
+.section-banner {
+    background-color: var(--clr-black);
+    color: var(--clr-white);
+    padding: 5rem 0;
+
+    h3 {
+        margin: 1rem 0;
+    }
+}
+// End of Section Banner
+
+
+// ====================== Section Blog ===================
+.section-blog {
+    padding: 15rem 0 10rem;
+}
+// End of section Blog
+
+
+
+
+
+// ====================== About Us ========================
+.section-about {
+    padding: 13rem 0 10rem;
+
+}
+// End of About Us
+
+
+
+
+
+// ====================== Portfolio  ========================
+.section-portfolio {
+    padding: 10rem 0;
+
+    .project {
+        transition: .3s;
+        opacity: 1;
+
+        &:hover, &:focus {
+            transform: scale(0.95);
+            opacity: .9;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+// ================= SECTION TESTIMONIAL ===================
+.section-testimonials {
+    padding: 15rem 0;
+
+    
+    .testimonials-container {
+        position: relative;
+        padding: 0rem 50px 5rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        width: 100%;
+
+        // overflow-x: auto;
+        // overscroll-behavior-inline: contain;
+    }
+
+        /* Fading animation */
+    .fade {
+        animation-name: fade;
+        animation-duration: 2s;
+    }
+    
+    @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+    }
+
+    .hide {
+        // display: none;
+    }
+    .prev, .next {
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        border-radius: 40%;
+        background-color: transparent;
+        border: 2px solid var(--clr-gray-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include ease(.3s);
+        position: absolute;
+        top: 40%;
+
+        &:hover, &:focus {
+            background-color: var(--clr-primary);
+            color: #fff;
+        }
+    }
+    .prev {
+        left: 0;
+    }
+    .next {
+        right: 0;
+    }
+
+    // dashes at the bottom
+    .dot {
+        cursor: pointer;
+        height: 12px;
+        width: 12px;
+        background-color: var(--clr-gray);
+        border-radius: 50%;
+        display: inline-block;
+        @include ease(.4s);
+
+        &:not(:last-child) {
+            margin-right: .5rem;
+        }
+    }
+    .active, .dot:hover, .dot:focus {
+        background-color: var(--clr-primary);
+        transform: scale(1.2);
+        box-shadow: 0 .5rem 1rem rgba(1, 10, 28, 0.54);
+    }
+
+    .testimonial {
+        background: var(--clr-white);
+        width: 100%;
+        text-align: center;
+        border-radius: 10px;
+        @include ease(.4s);
+        padding: 2.5rem 2rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.329);
+        margin-left: auto;
+        margin-right: auto;
+        @include ease(.3s);
+        border-bottom: 2px solid var(--clr-primary);
+        display: none;
+
+        &:hover {
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.129);
+            transform: translateY(-3px);
+        }
+
+
+        &__text {
+            text-align: center;
+        }
+
+        &__img {
+            width: auto;
+            height: 100px;
+            margin: 0rem auto;
+            margin-top: -50px; 
+            border: 1px solid var(--clr-primary);
+            border-radius: 50%;
+        }
+
+        &__name {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+    }
+
+}
+// end of testimonial section
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ///////////////////////////////////////////////
+  //             MEDIA QUERIES
+  /////////////////////////////////////////////////
+
+@media screen and (min-width: 769px) {
+
+    .section-hero {
+
+        .hero-text {
+            // margin-top: -10rem;
+        }
+
+        .btn-primary {
+            margin-right: 2rem;
+        }
+    }
+
+
+    .service {
+        padding: 3rem;
+        // box-shadow: 0 .2rem .5rem rgba(64, 48, 102, 0.186);
+        // border-radius: 1rem;
+        transition: .4s;
+        background-color: var(--clr-gray-light);
+
+        &:nth-child(1) {
+            border-radius: 1rem 0 0 1rem;
+        }
+        &:nth-child(3) {
+            border-radius: 0rem 1rem 1rem 0rem;
+        }
+        &:not(:last-child) {
+            border-right: 1px solid var(--clr-primary);
+        }
+    }
+
+
+
+
+    // Section-about
+    .section-about {
+        
+        .about-container {
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+        }
+        .about-gallery {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            gap: 2rem;
+        }
+    }
+
+    // Section-testimonial
+    .section-testimonials {
+
+        .testimonial {
+            max-width: 800px;
+        }
+    }
+    
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .section-hero {
+
+        .hero-container {
+            grid-template-columns: 1fr;
+
+            .hero-image {
+                display: none;
+            }
+        }
+    }
+
+    .service {
+        padding: 3rem;
+        // box-shadow: 0 .2rem .5rem rgba(64, 48, 102, 0.186);
+        // border-radius: 1rem;
+        transition: .4s;
+        background-color: var(--clr-gray-light);
+
+        &:nth-child(1) {
+            border-radius: 1rem 1rem 0 0rem;
+        }
+        &:nth-child(3) {
+            border-radius: 0rem 0rem 1rem 1rem;
+        }
+        &:not(:last-child) {
+            border-right: 0px solid transparent;
+            border-bottom: 1px solid var(--clr-primary);
+        }
+    }
+
+   
+
+     /// Section Testimonial
+     .section-testimonials {
+
+        .testimonials-container {
+            padding: 0;
+        }
+
+        .prev, .next {
+            // opacity: 0;
+            top: 110%;
+        }
+        .dot {
+            margin-top: 6rem;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 500px) {
+
+    .section-hero {
+        // display: none;
+
+        .hero-container {
+
+            .hero-name {
+                font-size: 4rem;
+            }
+        }
+    }
+    // end of section hero
+
+
+
+    // section testimonial
+    .section-testimonials {
+
+        .testimonial {
+
+            &__text {
+                font-size: 1.4rem;
+            }
+        }
+    }
+    
+ 
+}
+
+@media screen and (max-width: 325px) {
+
+   
+}
